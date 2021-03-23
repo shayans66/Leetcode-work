@@ -5,25 +5,18 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         
-        vector<int> answer;
+        unordered_map<int, int> map;
+        vector<int> ans;
         
         for(int i=0; i < nums.size(); i++){
-            
-            for(int j = i + 1; j < nums.size(); j++){
-                
-                if( nums[i] + nums[j] == target ){
-                    answer.push_back(i);
-                    answer.push_back(j);
-                    
-                    return answer;
-                }
-                
+            int comp = target - nums[i];
+            if( map.count(comp) ){
+                ans.push_back(map[comp]);
+                ans.push_back(i);
+                return ans;
             }
-            
-            
+            map[nums[i]] = i;
         }
-        
-        return answer;
-        
+        return ans;
     }
 };
