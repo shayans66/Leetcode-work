@@ -6,25 +6,28 @@
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
-        
-        one = head
         if not head:
             return False
-        two = head.next 
-    
-        while(one and two):
-            
-            if one == two:
-                return True
-            
-            one = one.next
-            
-            two = two.next
-            if two: 
-                two = two.next
-            else:
-                break
         
+        one_time = two_time = head
+        while True:
+#             if head and head.next:
+#                 one_time = one_time.next
+#                 two_time = two_time.next
+#                 if head.next.next:
+#                     two_time = two_time.next
+#                 else: return False
+#             else: return False
+            
+#             if one_time.val == two_time.val and one_time == two_time:
+#                 return True
+
+            if one_time.next and two_time.next and two_time.next.next:
+                one_time = one_time.next
+                two_time = two_time.next.next
+            else: return False
+            if one_time == two_time and one_time.val == two_time.val:
+                return True
+                
         return False
             
-        
