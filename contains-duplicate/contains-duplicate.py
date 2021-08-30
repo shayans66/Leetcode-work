@@ -1,18 +1,16 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-#         l = len(nums)
-#         for i in range(l):
-#             for j in range(l):
-#                 if i != j and nums[i] == nums[j]:
-#                     return True
-                
+
+#         dct = {}
+#         for el in nums:
+#             if el in dct.keys():
+#                 return True
+#             dct[el] = 1
 #         return False
         
-        dct = {}
-        for el in nums:
-            if el in dct.keys():
+        
+        nums.sort()
+        for i in range(0, len(nums)-1):
+            if nums[i] == nums[i+1]:
                 return True
-            dct[el] = 1
         return False
-        
-        
