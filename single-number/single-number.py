@@ -1,11 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        # ans = 0
-        # for el in nums:
-        #     ans ^= el
-        # return el
-        ans = nums[0]
-        for i,num in enumerate(nums):
-            if(i != 0):
-                ans ^= num
-        return ans
+        # x ^ x = 0
+        # x ^ 0 = x
+        
+        # (x ^ x) ^ (a ^ a) ^ (b ^ b) ^ c =
+        # 0 ^ 0 ^ 0 ^ c = c
+        
+        sol = 0
+        for n in nums:
+            sol = sol ^ n
+        return sol
