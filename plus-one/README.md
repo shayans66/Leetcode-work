@@ -1,3 +1,4 @@
+[Discussion Post (created on 1/8/2021 at 0:46)](https://leetcode.com/problems/plus-one/discuss/1438200/Pythonic-solution)  
 <h2>66. Plus One</h2><h3>Easy</h3><hr><div><p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>i<sup>th</sup></code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading <code>0</code>'s.</p>
 
 <p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
