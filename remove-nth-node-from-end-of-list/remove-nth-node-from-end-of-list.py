@@ -13,12 +13,12 @@ class Solution:
             cur = cur.next
             
         place = ln - n + 1
-        print(ln,n,place)
+        # print(ln,n,place)
         i = 1
         prev,cur = None,head
         while cur:
             # print(i,prev.val,cur.val)
-            print(f'i:{i}==n:{n}?')
+            # print(f'i:{i}==n:{n}?')
             if i == place:
                 if prev is None:
                     return head.next
