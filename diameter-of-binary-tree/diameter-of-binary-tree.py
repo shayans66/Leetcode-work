@@ -6,26 +6,24 @@
 #         self.right = right
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        def height(root):
+
+        diam = 0
+        a=[]
+        
+        def findDiam(root):
+            a.append(1)
             if not root:
                 return 0
-            return 1+max(height(root.left), height(root.right))
-        
-        def diamOfNode(root):
-            return height(root.left) + height(root.right)
+            nonlocal diam
             
-        # diameterOfBinaryTree= self.diameterOfBinaryTree
-        
-        stk = []
-        res = 0
-        if root: stk.append(root)
-        while stk:
-            node = stk.pop()
-            # print(f'res: {res}')
-            res = max(res, diamOfNode(node))
+            leftH = findDiam(root.left)
+            rightH = findDiam(root.right)
             
-            if node.right:
-                stk.append(node.right)
-            if node.left:
-                stk.append(node.left)
-        return res
+            diam = max(diam, leftH + rightH)
+            
+            return 1+max(leftH, rightH)
+        
+        findDiam(root)
+        
+        
+        return diam
