@@ -10,6 +10,7 @@ class Solution:
         
         res=[]
         for i in range(k):
-            res.append(heapq.heappop(freq)[1])
+            v,k = heapq.heappop(freq)
+            res.append(k)
         return res
             
