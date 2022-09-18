@@ -5,7 +5,6 @@ class Solution:
             h[e]=h.get(e,0)+1
 #        freq = list(h.values())
         freq = [[-v,k] for k,v in h.items()]
-        print(freq)
         heapq.heapify(freq)
         
         res=[]
